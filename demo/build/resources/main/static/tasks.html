@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="task.css">
+    <link rel="stylesheet" href="priority.css">
 </head>
 <body>
 
@@ -27,7 +31,7 @@
         <span class="close" id="closeModal">&times;</span>
         <h3>Create New Project</h3>
         <input type="text" id="newProjectName" placeholder="Project name">
-        <input type="text" id="newProjectTeam" placeholder="Team members (optional)">
+        <input type="text" id="newProjectTeam" placeholder="Team members">
         <button onclick="createProject()">Create</button>
     </div>
 </div>
@@ -48,8 +52,8 @@
             <option value="High">High</option>
             <option value="Low">Low</option>
         </select>
-        <input type="text" id="assignedTo" placeholder="Assign to (optional)">
-        <input type="text" id="tagsInput" placeholder="Tags (comma-separated)">
+        <input type="text" id="assignedTo" placeholder="Assign to">
+        <input type="text" id="tagsInput" placeholder="Tags ">
         <button type="submit">Add Task</button>
     </form>
 
@@ -73,5 +77,8 @@
 </main>
 
 <script src="script.js"></script>
+<script src="tasks.js"></script>
+<script src="ui.js"></script>
+<script src="projects.js"></script>
 </body>
 </html>

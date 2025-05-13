@@ -1,0 +1,96 @@
+#hamburger {
+    font-size: 22px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background-color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -400px;
+    width: 300px;
+    height: 100%;
+    background-color: #ffe6f0;
+    color: #333;
+    padding: 100px 10px 20px;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.2);
+}
+
+body.sidebar-open #mainContent {
+    margin-left: 300px;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#homeBtn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #333;
+}
+
+#homeBtn:hover {
+    color: black;
+    transform: scale(1.1);
+}
+
+#projectList {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+#projectList li {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+#projectList li:hover,
+#projectList li.selected {
+    background-color: #ffd2e2;
+}
+
+#addProjectBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 30px;
+    background-color: #ffe6f0;
+    color: black;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 1002;
+}
