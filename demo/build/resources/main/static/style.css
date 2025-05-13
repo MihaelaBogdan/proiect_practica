@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5dc;
+    margin: 0;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+form input {
+    flex: 1;
+}
+
+.board {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.column {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.column h2 {
+    text-align: center;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task {
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    padding: 12px;
+    margin-bottom: 12px;
+    border-left: 5px solid #ccc;
+    transition: 0.2s ease-in-out;
+}
+
+.task:hover {
+    transform: scale(1.01);
+}
+
+
+.task:hover {
+    transform: scale(1.02);
+}
+
+.task .priority.High {
+    background: #f44336;
+    color: white;
+}
+
+.task .priority.Low {
+    background: #2196f3;
+    color: white;
+}
+
+.task .priority.Normal {
+    background: #888;
+    color: white;
+}
+
+.task-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task select {
+    padding: 5px;
+}
+
+.task button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.tag {
+    display: inline-block;
+    background: #dfe1e6;
+    color: #172b4d;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-right: 4px;
+}
+.priority.High {
+    background-color: #de350b;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.priority.Normal {
+    background-color: #5e6c84;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+.priority.Low {
+    background-color: #00b8d9;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+.task.dragging {
+    opacity: 0.5;
+    transform: scale(0.98);
+}
+.task-list.droppable {
+    background-color: #e0e0e0;
+}
+

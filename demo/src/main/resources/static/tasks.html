@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Task Manager</h1>
+
+<form id="taskForm">
+    <input type="text" id="taskInput" placeholder="Task description:" required>
+    <select id="priorityInput">
+        <option value="Normal">Normal</option>
+        <option value="High">High</option>
+        <option value="Low">Low</option>
+    </select>
+    <select id="projectSelect"></select>
+    <input type="text" id="assignedTo" placeholder="Assign to (optional)">
+    <input type="text" id="tagsInput" placeholder="Tags (comma-separated)">
+    <button type="submit">Add Task</button>
+</form>
+<select id="filterProject">
+    <option value="">All Projects</option>
+</select>
+
+<div class="board">
+    <div class="column" id="To Do">
+        <h2>To Do</h2>
+        <ul class="task-list" id="todo-list"></ul>
+    </div>
+    <div class="column" id="In Progress">
+        <h2>In Progress</h2>
+        <ul class="task-list" id="progress-list"></ul>
+    </div>
+    <div class="column" id="Done">
+        <h2>Done</h2>
+        <ul class="task-list" id="done-list"></ul>
+    </div>
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
