@@ -2,44 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Task Manager</title>
+    <title></title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Task Manager</h1>
 
-<form id="taskForm">
-    <input type="text" id="taskInput" placeholder="Task description:" required>
-    <select id="priorityInput">
-        <option value="Normal">Normal</option>
-        <option value="High">High</option>
-        <option value="Low">Low</option>
-    </select>
-    <select id="projectSelect"></select>
-    <input type="text" id="assignedTo" placeholder="Assign to (optional)">
-    <input type="text" id="tagsInput" placeholder="Tags (comma-separated)">
-    <button type="submit">Add Task</button>
-</form>
-<select id="filterProject">
-    <option value="">All Projects</option>
-</select>
+<div id="hamburger">☰</div>
 
-<div class="board">
-    <div class="column" id="To Do">
-        <h2>To Do</h2>
-        <ul class="task-list" id="todo-list"></ul>
+<<div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <button id="homeBtn" title="All Tasks"></button>
     </div>
-    <div class="column" id="In Progress">
-        <h2>In Progress</h2>
-        <ul class="task-list" id="progress-list"></ul>
-    </div>
-    <div class="column" id="Done">
-        <h2>Done</h2>
-        <ul class="task-list" id="done-list"></ul>
+
+    <h3></h3>
+    <ul id="projectList"></ul>
+</div>
+
+
+<button id="addProjectBtn" title="Create Project">＋</button>
+
+
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h3>Create New Project</h3>
+        <input type="text" id="newProjectName" placeholder="Project name">
+        <input type="text" id="newProjectTeam" placeholder="Team members (optional)">
+        <button onclick="createProject()">Create</button>
     </div>
 </div>
 
 
+<main id="mainContent">
+    <h1></h1>
+    <select id="projectSelect" style="display: none;"></select>
+    <select id="filterProject" style="display: none;"></select>
+
+    <h2 id="currentProjectTitle" class="project-title"></h2>
+
+
+    <form id="taskForm">
+        <input type="text" id="taskInput" placeholder="Task description:" required>
+        <select id="priorityInput">
+            <option value="Normal">Normal</option>
+            <option value="High">High</option>
+            <option value="Low">Low</option>
+        </select>
+        <input type="text" id="assignedTo" placeholder="Assign to (optional)">
+        <input type="text" id="tagsInput" placeholder="Tags (comma-separated)">
+        <button type="submit">Add Task</button>
+    </form>
+
+
+    <div class="board">
+        <div class="column" id="To Do">
+            <h2>To Do</h2>
+            <ul class="task-list" id="todo-list"></ul>
+        </div>
+        <div class="column" id="In Progress">
+            <h2>In Progress</h2>
+            <ul class="task-list" id="progress-list"></ul>
+        </div>
+        <div class="column" id="Done">
+            <h2>Done</h2>
+            <ul class="task-list" id="done-list"></ul>
+        </div>
+    </div>
+
+
+</main>
 
 <script src="script.js"></script>
 </body>
