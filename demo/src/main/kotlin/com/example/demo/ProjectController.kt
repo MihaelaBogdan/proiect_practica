@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger
 
 @RestController
 @RequestMapping("/projects")
-class ProjectController {
+class ProjectController(private val projectRepository: ProjectRepository) {
 
     private val projects = mutableListOf<Project>()
     private val idCounter = AtomicInteger(1)
@@ -13,15 +13,20 @@ class ProjectController {
     @PostMapping
     fun createProject(@RequestBody project: Project): Project {
         val newProject = Project(
-            id = idCounter.getAndIncrement(),
             name = project.name,
-            team = project.team
+//            team = project.team
         )
-        projects.add(newProject)
+
+        projectRepository.save(newProject)
+//        projects.add(newProject)
         return newProject
+
     }
 
     @GetMapping
-    fun getAllProjects(): List<Project> = projects
+    fun getAllProjects(): List<Project> {
+        val projects = projectRepository.findAll()
+        return projects
+    }
 }
 

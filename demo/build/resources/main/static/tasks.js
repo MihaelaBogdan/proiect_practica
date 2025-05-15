@@ -15,9 +15,9 @@ async function loadTasks() {
 
     tasks.forEach(task => {
         if (selectedPriority && task.priority !== selectedPriority) return;
-        if (selectedProject) {
-            if (task.projectId != selectedProject) return;
-        }
+       if (selectedProject) {
+           if (!task.project || String(task.project.id) !== selectedProject) return;
+       }
 
         const li = document.createElement('li');
         li.className = 'task';

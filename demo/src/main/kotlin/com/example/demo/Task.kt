@@ -1,11 +1,29 @@
 package com.example.demo
 
+import jakarta.persistence.*
+
+
+@Entity
+@Table(name="practica_tasks")
 data class Task(
-    val id: Int,
     val description: String,
     val status: String = "To Do",
     val priority: String = "Normal",
-    val projectId: Int? = null,
+
+    @ManyToOne
+    val project: Project? = null,
     val assignedTo: String? = null,
-    val tags: List<String> = emptyList()
-)
+//    val tags: List<String> = emptyList()
+) {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    val id: Int? = null
+
+    constructor() : this(
+        description = "",
+        status = "To Do",
+        priority = "Normal",
+        project = null,
+        assignedTo = null
+    )
+}
